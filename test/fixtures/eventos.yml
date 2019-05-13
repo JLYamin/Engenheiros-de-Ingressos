@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date_begin: 2019-04-24 10:46:32
+  date_end: 2019-04-24 10:46:32
+  tickets_total: 1
+
+two:
+  title: MyString
+  date_begin: 2019-04-24 10:46:32
+  date_end: 2019-04-24 10:46:32
+  tickets_total: 1
