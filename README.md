@@ -1,4 +1,4 @@
-# Eventop Eventos
+# Eventop Eventos®
 ## oi gatinhos sdds
 
 :sparkles: oi lembrem de seguir o git flow :heart:
