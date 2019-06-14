@@ -5,7 +5,7 @@ class EventosController < ApplicationController
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.all
+    @eventos = Evento.order(:title)
   end
 
   # GET /eventos/1

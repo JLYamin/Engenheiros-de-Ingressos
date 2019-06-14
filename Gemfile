@@ -22,6 +22,12 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+#valida atributos
+gem "validators"
+
+#gera e verifica nmros de cpf
+gem "cpf_cnpj"
+
 gem 'simple_form'
 
 # Use CoffeeScript for .coffee assets and views

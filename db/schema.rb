@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_13_141422) do
+ActiveRecord::Schema.define(version: 2019_06_14_213916) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cidades", force: :cascade do |t|
+    t.string "cidade_nome"
+    t.integer "estado_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["estado_id"], name: "index_cidades_on_estado_id"
+  end
+
+  create_table "classes_eventos", force: :cascade do |t|
+    t.string "classe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.string "name"
+    t.string "sigla"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "eventos", force: :cascade do |t|
     t.string "title"
@@ -23,6 +50,13 @@ ActiveRecord::Schema.define(version: 2019_05_13_141422) do
     t.index ["user_id"], name: "index_eventos_on_user_id"
   end
 
+  create_table "faixa_etaria", force: :cascade do |t|
+    t.string "faixa_etaria"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -33,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_05_13_141422) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "cpf"
+    t.string "cnpj"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

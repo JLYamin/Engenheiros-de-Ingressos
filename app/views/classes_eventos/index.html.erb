@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Classes de Eventos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Classe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classes_eventos.each do |classes_evento| %>
+      <tr>
+        <td><%= classes_evento.classe %></td>
+        <td><%= link_to 'Show', classes_evento %></td>
+        <td><%= link_to 'Edit', edit_classes_evento_path(classes_evento) %></td>
+        <td><%= link_to 'Destroy', classes_evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Classe de Evento', new_classes_evento_path %>

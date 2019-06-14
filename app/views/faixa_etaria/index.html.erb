@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Faixa Etaria</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Faixa etaria</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @faixa_etaria.each do |faixa_etarium| %>
+      <tr>
+        <td><%= faixa_etarium.faixa_etaria %></td>
+        <td><%= faixa_etarium.description %></td>
+        <td><%= link_to 'Show', faixa_etarium %></td>
+        <td><%= link_to 'Edit', edit_faixa_etarium_path(faixa_etarium) %></td>
+        <td><%= link_to 'Destroy', faixa_etarium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Faixa Etarium', new_faixa_etarium_path %>
