@@ -16,3 +16,50 @@
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+header{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 0;
+    background-color: antiquewhite;
+    width: 100vw;
+    height: auto;
+    padding-left: 20px;
+}
+
+header > a{
+    color: snow;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+header > a:link{
+    background-color: transparent;
+}
+
+
+header > a >img{
+    height: auto;
+    max-height: 5vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+body{
+    font-family: 'Quattrocento', serif;
+    background-color: white;
+    padding: 0;
+}
+
+main{
+    padding: 20px;
+}
+
+p{
+    font-family: 'Quattrocento', serif;
+}
+

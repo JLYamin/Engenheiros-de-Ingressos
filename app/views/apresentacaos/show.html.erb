@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @apresentacao.horario %>
+</p>
+
+<p>
+  <strong>Ingressos total:</strong>
+  <%= @apresentacao.ingressos_total %>
+</p>
+
+<p>
+  <strong>Disponiveis:</strong>
+  <%= @apresentacao.disponiveis %>
+</p>
+
+<%= link_to 'Edit', edit_apresentacao_path(@apresentacao) %> |
+<%= link_to 'Back', apresentacaos_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :apresentacaos
   resources :classes_eventos
   resources :categories
   resources :cidades

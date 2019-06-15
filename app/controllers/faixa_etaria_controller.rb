@@ -4,7 +4,7 @@ class FaixaEtariaController < ApplicationController
   # GET /faixa_etaria
   # GET /faixa_etaria.json
   def index
-    @faixa_etaria = FaixaEtarium.all
+    @faixa_etaria = FaixaEtarium.order(:faixa_etaria)
   end
 
   # GET /faixa_etaria/1

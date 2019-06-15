@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ingressos</title>
+    <title>ingressos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet">
   </head>
 
-  <body class="container">
+  <body >
+    <header> 
+      <a href="/"><%= image_tag asset_path("logo.png", :alt => "ingressos logo") %> </a>
+    </header>
+    <main>
     <%= yield %>
+    </main>
   </body>
 </html>

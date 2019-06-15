@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horario: 2019-06-14 19:53:29
+  ingressos_total: 1
+  disponiveis: 1
+
+two:
+  horario: 2019-06-14 19:53:29
+  ingressos_total: 1
+  disponiveis: 1
