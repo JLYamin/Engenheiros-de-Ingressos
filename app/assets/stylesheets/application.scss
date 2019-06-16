@@ -17,49 +17,102 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+::selection {
+  background: seashell; /* WebKit/Blink Browsers */
+}
+
 header{
     padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     padding-left: 0;
     background-color: antiquewhite;
     width: 100vw;
-    height: auto;
+    height: 7vh;
     padding-left: 20px;
+    position: fixed;
+    top:0;
+    overflow: hidden;
 }
 
+
 header > a{
-    color: snow;
-    width: 30%;
+    width: 20vw;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-header > a:link{
-    background-color: transparent;
+a{
+    color: salmon;
+    text-decoration: none;
 }
 
+a:link{
+    background-color: transparent;
+    color: rosybrown;
+}
 
-header > a >img{
-    height: auto;
-    max-height: 5vh;
-    width: 100%;
+a:visited{
+    color: mediumvioletred;
+}
+
+a:hover{
+    color: navajowhite;
+    text-decoration: none;
+    background-color: transparent
+}
+
+.logo > a >img{
+    height: 3vh;
+    width: auto;
     object-fit: contain;
+    object-position: left;
 }
 
 body{
+
     font-family: 'Quattrocento', serif;
     background-color: white;
     padding: 0;
 }
 
 main{
-    padding: 20px;
+    min-height: 89vh;
+    padding: 16px;
+    margin-top:7vh;
+}
+
+main > tbody{
+    display: flex;
 }
 
 p{
     font-family: 'Quattrocento', serif;
 }
 
+footer{
+    color: #a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    width: 100%;
+    position: static;
+    bottom: 0;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.opcoes{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.opcoes > a{
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #a00;
+}

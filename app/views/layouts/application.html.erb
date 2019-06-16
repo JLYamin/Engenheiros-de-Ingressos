@@ -13,10 +13,25 @@
 
   <body >
     <header> 
-      <a href="/"><%= image_tag asset_path("logo.png", :alt => "ingressos logo") %> </a>
+      <div class="logo">
+        <a href="/"><%= image_tag asset_path("logo.png", :alt => "ingressos logo") %> </a>
+      </div>
+      <div class="opcoes">
+        <a href="/users/sign_in">Sign in</a>
+        <a href="/eventos">Eventos</a>
+        <a href="/categories">Categorias</a>
+        <a href="/estados">Estados</a>
+        <a href="/cidades">Cidades</a>
+        <a href="/apresentacaos">Apresentacoes</a>
+        <a href="/classes_eventos">Classes</a>
+        <a href="/faixa_etaria">Faixa Etaria</a>
+      </div>
     </header>
     <main>
     <%= yield %>
     </main>
+    <footer>
+      <p> trabalho de engenharia de software - todos os direitos para o grupo </p>
+    </footer>
   </body>
 </html>
