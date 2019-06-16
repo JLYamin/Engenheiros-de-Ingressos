@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
       <th>Horario</th>
       <th>Ingressos total</th>
       <th>Disponiveis</th>
@@ -15,6 +17,8 @@
   <tbody>
     <% @apresentacaos.each do |apresentacao| %>
       <tr>
+        <td><%= apresentacao.name %></td>
+        <td><%= apresentacao.descricao %></td>
         <td><%= apresentacao.horario %></td>
         <td><%= apresentacao.ingressos_total %></td>
         <td><%= apresentacao.disponiveis %></td>
