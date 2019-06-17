@@ -18,27 +18,31 @@
       </div>
       <div class="opcoes">
       <% if user_signed_in? %>
-         <% if user_signed_in? %>
-         <% end %>
-        Logged in as <strong><%=    current_user.email %></strong>
+         <% if  current_user.adm == true %>
+          Logged in as : <strong> adm</strong>
+          <a href="adm">Painel</a>
+          <% else %>
+          Logged in as . <strong><%=    current_user.email %></strong>
+          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %>
+        <% end %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %>
       <% else %>
         <a href="/users/sign_in">Sign in</a>
       <% end %>
+
         <a href="/eventos">Eventos</a>
         <a href="/categories">Categorias</a>
-        <a href="/estados">Estados</a>
-        <a href="/cidades">Cidades</a>
         <a href="/apresentacaos">Apresentacoes</a>
         <a href="/classes_eventos">Classes</a>
         <a href="/faixa_etaria">Faixa Etaria</a>
+
       </div>
     </header>
     <main>
     <%= yield %>
     </main>
     <footer>
+      <br>
       <p> trabalho de engenharia de software - todos os direitos para o grupo </p>
     </footer>
   </body>

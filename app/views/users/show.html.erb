@@ -1,0 +1,29 @@
+<% if user_signed_in? %>
+<% if  current_user.adm == true %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>usuario:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>adm:</strong>
+  <%= @user.adm %>
+</p>
+
+
+<p>
+  <strong>email:</strong>
+  <%= @user.email %></p>
+
+<%= link_to "Mostrar todos os users", users_path %>
+
+<% else %>
+  <p>Somente Adm</p>
+
+<% end %>
+<% else%>
+  <p>Somente Adm</p>
+<% end %>
