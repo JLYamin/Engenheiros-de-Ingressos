@@ -44,3 +44,5 @@ Estado.create(name: 'Tocantins', sigla: 'TO')
 User.create(email: 'adm@adm.com', password:'admadm', adm: 'true')
 User.create(email: 'oi@gmail.com', password:'123456')
 User.create(email: 'pao@pao.com', password:'paopao')
+
+FaixaEtarium.create(faixa_etaria:'Livre', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
