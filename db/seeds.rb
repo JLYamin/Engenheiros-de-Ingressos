@@ -46,3 +46,8 @@ User.create(email: 'oi@gmail.com', password:'123456')
 User.create(email: 'pao@pao.com', password:'paopao')
 
 FaixaEtarium.create(faixa_etaria:'Livre', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
+FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 10 anos', description:'Conteúdo violento ou linguagem inapropriada para crianças, ainda que em menor intensidade')
+FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 12 anos', description:'As cenas podem conter agressão física, consumo de drogas e insinuação sexual')
+FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 14 ano', description:'Conteúdos mais violentos e/ ou de linguagem sexual mais acentuada')
+FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 16 ano', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
+FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 18 ano', description:'Conteúdos violentos e sexuais extremos. Cenas de sexo, incesto ou atos repetidos de tortura, mutilação ou abuso sexual.')
