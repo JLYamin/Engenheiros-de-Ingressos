@@ -40,3 +40,7 @@ Estado.create(name: 'Santa Catarina', sigla: 'SC')
 Estado.create(name: 'São Paulo', sigla: 'SP')
 Estado.create(name: 'Sergipe', sigla: 'SE')
 Estado.create(name: 'Tocantins', sigla: 'TO')
+
+User.create(email: 'adm@adm.com', password:'admadm', adm: 'true')
+User.create(email: 'oi@gmail.com', password:'123456')
+User.create(email: 'pao@pao.com', password:'paopao')

@@ -1,6 +1,14 @@
+<% if (user_signed_in?)and(current_user.adm == true) %>
+
+
 <h1>Editing Estado</h1>
 
 <%= render 'form', estado: @estado %>
 
 <%= link_to 'Show', @estado %> |
 <%= link_to 'Back', estados_path %>
+
+<% else %>
+  <p>Somente Adm</p>
+  <a href="/">Voltar<a>
+<% end %>

@@ -1,0 +1,18 @@
+<% if (user_signed_in?)and(current_user.adm == true) %>
+
+<h1>Painel de Administracao</h1>
+<br>
+<ul>
+    <li><a href="/estados">Estados</a></li>
+    <li><a href="/estados">Cidades</a></li>
+    <li><a href="/eventos">Eventos</a></li>
+    <li><a href="/categories">Categorias</a></li>
+    <li><a href="/apresentacaos">Apresentacoes</a></li>
+    <li><a href="/classes_eventos">Classes</a></li>
+    <li><a href="/faixa_etaria">Faixa Etaria</a></li>
+</ul>
+
+<% else %>
+  <p>Somente Adm</p>
+  <a href="/">Voltar<a>
+<% end %>
