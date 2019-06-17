@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   get 'adm/index'
   resources :apresentacaos
   resources :classes_eventos
-  resources :categories
   resources :cidades
   resources :estados
   resources :faixa_etaria
