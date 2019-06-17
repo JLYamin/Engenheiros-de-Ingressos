@@ -7,12 +7,12 @@
 
 <p>
   <strong>Date begin:</strong>
-  <%= @evento.date_begin %>
+  <%= @evento.date_begin.strftime("%d/%B/%Y - %I:%M%p") %>
 </p>
 
 <p>
   <strong>Date end:</strong>
-  <%= @evento.date_end %>
+  <%= @evento.date_end.strftime("%d/%B/%Y - %I:%M%p") %>
 </p>
 
 
