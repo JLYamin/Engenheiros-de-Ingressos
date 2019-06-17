@@ -7,8 +7,10 @@
     <%= f.input :title %>
     <%= f.input :date_begin %>
     <%= f.input :date_end %>
-    <%= f.input :tickets_total %>
+    <%= f.association :classes_evento, label_method: :classe, prompt: "Tipo do evento"%>
+    <%= f.hidden_field :user_id %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit %>

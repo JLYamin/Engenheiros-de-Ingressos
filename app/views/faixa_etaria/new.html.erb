@@ -1,5 +1,16 @@
-<h1>New Faixa Etarium</h1>
+<% if (user_signed_in?)and(current_user.adm == true) %>
+
+
+
+
+
+<h1>Nova Faixa Etaria</h1>
 
 <%= render 'form', faixa_etarium: @faixa_etarium %>
 
 <%= link_to 'Back', faixa_etaria_path %>
+
+<% else %>
+  <p>Somente Adm</p>
+  <a href="/">Voltar<a>
+<% end %>

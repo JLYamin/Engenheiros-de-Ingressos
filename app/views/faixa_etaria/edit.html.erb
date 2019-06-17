@@ -1,6 +1,11 @@
+<% if (user_signed_in?)and(current_user.adm == true) %>
 <h1>Editing Faixa Etarium</h1>
 
 <%= render 'form', faixa_etarium: @faixa_etarium %>
 
 <%= link_to 'Show', @faixa_etarium %> |
 <%= link_to 'Back', faixa_etaria_path %>
+<% else %>
+  <p>Somente Adm</p>
+  <a href="/">Voltar<a>
+<% end %>

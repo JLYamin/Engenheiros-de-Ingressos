@@ -1,16 +1,21 @@
 class EventosController < ApplicationController
-  before_action :set_evento, only: [:show, :edit, :update, :destroy]
+  before_action :set_evento, only: [:show, :edit, :update, :destroy, :showMy]
   before_action :authenticate_user!, only:  [:new, :edit, :destroy]
 
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.order(:title)
+    @eventos = Evento.order(:id)
   end
 
   # GET /eventos/1
   # GET /eventos/1.json
   def show
+
+  end
+
+  def showMy
+    @evento = Evento.find_by user_id: current_user.id
   end
 
   # GET /eventos/new
@@ -26,7 +31,7 @@ class EventosController < ApplicationController
   # POST /eventos.json
   def create
     @evento = Evento.new(evento_params)
-    @evento.user_id = current_user
+    @evento.user_id = current_user.id
 
     respond_to do |format|
       if @evento.save
@@ -71,6 +76,6 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params.require(:evento).permit(:title, :date_begin, :date_end, :tickets_total, :user_id)
+      params.require(:evento).permit(:title, :date_begin, :date_end, :user_id)
     end
 end

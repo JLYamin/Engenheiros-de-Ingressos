@@ -1,6 +1,8 @@
+<% if (user_signed_in?)and(current_user.adm == true) %>
 <h1>Editing Evento</h1>
 
 <%= render 'form', evento: @evento %>
 
 <%= link_to 'Show', @evento %> |
 <%= link_to 'Back', eventos_path %>
+<%end%>

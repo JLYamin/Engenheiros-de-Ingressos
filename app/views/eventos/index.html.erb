@@ -8,7 +8,6 @@
       <th>Title</th>
       <th>Date begin</th>
       <th>Date end</th>
-      <th>Tickets total</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +16,9 @@
     <% @eventos.each do |evento| %>
       <tr>
         <td><%= evento.title %></td>
-        <td><%= evento.date_begin %></td>
-        <td><%= evento.date_end %></td>
-        <td><%= evento.tickets_total %></td>
+        <td><%= evento.date_begin.strftime("%d/%B/%Y - %I:%M%p")  %></td>
+        <td><%= evento.date_end.strftime("%d/%B/%Y at %I:%M%p") %></td>
+
         <td><%= link_to 'Show', evento %></td>
         <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
         <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>

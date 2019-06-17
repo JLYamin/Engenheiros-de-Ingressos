@@ -1,6 +1,16 @@
+<% if (user_signed_in?)and(current_user.adm == true) %>
+
+
+
+
 <h1>Editing Classes Evento</h1>
 
 <%= render 'form', classes_evento: @classes_evento %>
 
 <%= link_to 'Show', @classes_evento %> |
 <%= link_to 'Back', classes_eventos_path %>
+
+<% else %>
+  <p>Somente Adm</p>
+  <a href="/">Voltar<a>
+<% end %>

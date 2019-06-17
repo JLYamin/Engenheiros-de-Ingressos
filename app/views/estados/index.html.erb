@@ -16,9 +16,11 @@
       <tr>
         <td><%= estado.name %></td>
         <td><%= estado.sigla %></td>
+        <% if (user_signed_in?)and(current_user.adm == true) %>
         <td><%= link_to 'Show', estado %></td>
         <td><%= link_to 'Edit', edit_estado_path(estado) %></td>
         <td><%= link_to 'Destroy', estado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,6 @@
 
 <br>
 
+<% if (user_signed_in?)and(current_user.adm == true) %>
 <%= link_to 'Novo Estado', new_estado_path %>
+<% end %>
