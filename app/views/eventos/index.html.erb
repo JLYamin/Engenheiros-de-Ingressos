@@ -8,6 +8,9 @@
       <th>Title</th>
       <th>Date begin</th>
       <th>Date end</th>
+      <th>Criado por</th>
+      <th>Tipo de Evento</th>
+      <th>Faixa Etaria</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,10 +21,14 @@
         <td><%= evento.title %></td>
         <td><%= evento.date_begin.strftime("%d/%B/%Y - %I:%M%p")  %></td>
         <td><%= evento.date_end.strftime("%d/%B/%Y at %I:%M%p") %></td>
-
+        <td><%= evento.user.email %></td>
+        <td><%= evento.classes_evento.classe %></td>
+        <td><%= evento.faixa_etarium.faixa_etaria %></td>
         <td><%= link_to 'Show', evento %></td>
-        <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
-        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if (user_signed_in?)and((current_user.adm == true)||(current_user == evento.user)) %>
+          <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
+          <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>

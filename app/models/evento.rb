@@ -1,12 +1,10 @@
 class Evento < ApplicationRecord
     belongs_to :user
     belongs_to :classes_evento
-    belongs_to :category
     belongs_to :faixa_etarium
     has_many :apresentacaos
 
     before_save :normalize_fields
-    before_save :validate_date
 
     validates :title, presence: true, length:{in: 2..30}
     validate :expiration_date_cannot_be_in_the_past
@@ -14,7 +12,7 @@ class Evento < ApplicationRecord
     private
     def normalize_fields
         self.title = self.title.titleize
-        self.descricao = self.descricao.capitalize
+        #self.descricao = self.descricao.capitalize
     end
 
     def expiration_date_cannot_be_in_the_past

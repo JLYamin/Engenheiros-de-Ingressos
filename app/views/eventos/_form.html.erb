@@ -8,7 +8,8 @@
     <%= f.input :date_begin %>
     <%= f.input :date_end %>
     <%= f.association :classes_evento, label_method: :classe, prompt: "Tipo do evento"%>
-    <%= f.hidden_field :user_id %>
+    <%= f.association :faixa_etarium, label_method: :faixa_etaria, prompt: "Faixa Etaria"%>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
 

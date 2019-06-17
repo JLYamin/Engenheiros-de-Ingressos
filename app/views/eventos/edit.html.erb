@@ -1,4 +1,4 @@
-<% if (user_signed_in?)and(current_user.adm == true) %>
+<% if (user_signed_in?)and((current_user.adm == true)||(current_user == @evento.user)) %>
 <h1>Editing Evento</h1>
 
 <%= render 'form', evento: @evento %>
