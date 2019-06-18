@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'adm/index'
   resources :apresentacaos
   resources :classes_eventos
-  resources :cidades
+  resources :cidades, only:[:show, :edit, :update, :destroy]
   resources :estados
   resources :faixa_etaria
   resources :credit_cards
