@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_024122) do
+ActiveRecord::Schema.define(version: 2019_06_18_185902) do
 
   create_table "apresentacaos", force: :cascade do |t|
     t.datetime "horario"
@@ -75,6 +75,33 @@ ActiveRecord::Schema.define(version: 2019_06_18_024122) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ingressos", force: :cascade do |t|
+    t.integer "apresentacao_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["apresentacao_id"], name: "index_ingressos_on_apresentacao_id"
+    t.index ["user_id"], name: "index_ingressos_on_user_id"
+  end
+
+  create_table "locals", force: :cascade do |t|
+    t.string "local"
+    t.string "endereco"
+    t.integer "cidade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cidade_id"], name: "index_locals_on_cidade_id"
+  end
+
+  create_table "salas", force: :cascade do |t|
+    t.integer "num"
+    t.string "complemento_sala"
+    t.integer "local_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["local_id"], name: "index_salas_on_local_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -41,9 +41,17 @@ Estado.create(name: 'São Paulo', sigla: 'SP')
 Estado.create(name: 'Sergipe', sigla: 'SE')
 Estado.create(name: 'Tocantins', sigla: 'TO')
 
+
 User.create(email: 'adm@adm.com', password:'admadm', adm: 'true')
-User.create(email: 'oi@gmail.com', password:'123456')
-User.create(email: 'pao@pao.com', password:'paopao')
+User.create(email: 'oi@gmail.com', password:'123456', cpf:Faker::CPF.cpf)
+User.create(email: 'pao@pao.com', password:'paopao', cpf: Faker::CPF.cpf)
+
+d1 = DateTime.new(2022,06,22)
+d2 = DateTime.new(2022,06,27)
+
+Evento.create(title: 'Oi sdds', date_begin: DateTime.new(2022,06,22) ,date_end: DateTime.new(2022,06,27), user_id: 1, descricao: 'oi sdds', faixa_etarium_id: 2, classes_evento_id: 1)
+Evento.create(title: 'Helo Goda', date_begin: DateTime.new(2022,05,03) ,date_end: DateTime.new(2022,10,01), user_id: 1, faixa_etarium_id: 5, classes_evento_id: 3)
+Evento.create(title: 'Helsing Goda', date_begin: DateTime.new(2022,05,03) ,date_end: DateTime.new(2022,10,01), user_id: 3, faixa_etarium_id: 5, classes_evento_id: 3)
 
 FaixaEtarium.create(faixa_etaria:'Livre', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
 FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 10 anos', description:'Conteúdo violento ou linguagem inapropriada para crianças, ainda que em menor intensidade')

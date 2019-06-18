@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :salas
+  resources :locals
+  resources :ingressos
   get 'adm/index'
   resources :apresentacaos
   resources :classes_eventos
-  resources :cidades, only:[:show, :edit, :update, :destroy]
+  resources :cidades
   resources :estados
   resources :faixa_etaria
   resources :credit_cards
