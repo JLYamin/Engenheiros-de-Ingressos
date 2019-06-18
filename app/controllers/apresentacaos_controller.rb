@@ -69,6 +69,6 @@ class ApresentacaosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apresentacao_params
-      params.require(:apresentacao).permit(:name, :descricao, :horario, :ingressos_total, :disponiveis)
+      params.require(:apresentacao).permit(:name, :descricao, :horario, :ingressos_total, :disponiveis, :evento_id)
     end
 end
