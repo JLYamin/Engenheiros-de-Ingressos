@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  security: 1
+  expiration: 2019-06-17
+
+two:
+  number: 1
+  security: 1
+  expiration: 2019-06-17

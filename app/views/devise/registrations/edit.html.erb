@@ -12,6 +12,10 @@
     <%= f.input :name,
                 required: true,
                 autofocus: true%>
+    <%= f.input :cpf,
+                required: true,
+                label: "CPF",
+                input_html: { autocomplete: "cpf" }%>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
@@ -30,8 +34,10 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<%= link_to "Editar cartão de crédito?", edit_credit_card_path(@user.credit_card.id) %>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<h3>Excluir minha conta</h3>
+
+<p>Insatisfeito? <%= link_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Tem certeza?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
