@@ -5,14 +5,21 @@ class Evento < ApplicationRecord
     has_many :apresentacaos
 
     before_save :normalize_fields
-
+    validate :mesmo_evento_na_mesma_data
     validates :title, presence: true, length:{in: 2..30}
     validate :dates_cannot_be_in_the_past
 
+
     private
     def normalize_fields
-        self.title = self.title.titleize
+        self.title = self.title.downcase.titleize
         #self.descricao = self.descricao.capitalize
+    end
+
+    def mesmo_evento_na_mesma_data
+        if Evento.where(title: self.title.downcase.titleize, date_begin: self.date_begin.to_date.beginning_of_day..self.date_end.to_date.end_of_day)
+            errors.add(:title, "ja existe")
+        end
     end
 
     def dates_cannot_be_in_the_past

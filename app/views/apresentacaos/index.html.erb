@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @apresentacaos.each do |apresentacao| %>
+    <% if @apresentacaos.each do |apresentacao| %>
       <tr>
         <td><%= apresentacao.name %></td>
         <td><%= apresentacao.descricao %></td>
@@ -26,7 +26,10 @@
         <td><%= link_to 'Edit', edit_apresentacao_path(apresentacao) %></td>
         <td><%= link_to 'Destroy', apresentacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <%end.empty?%>
+      Evento doesnt have apresentacoes yet.
     <% end %>
+
   </tbody>
 </table>
 
