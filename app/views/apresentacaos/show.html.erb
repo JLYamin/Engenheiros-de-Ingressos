@@ -27,5 +27,24 @@
   <%= @apresentacao.disponiveis %>
 </p>
 
+<tbody>
+<%= @evento.apresentacaos.each do |apresentacao| %>
+   <tr>
+    <td><%= apresentacao.name %></td>
+    <td><%= apresentacao.descricao %></td>
+    <td><%= apresentacao.horario %></td>
+    <td><%= apresentacao.ingressos_total %></td>
+    <td><%= apresentacao.disponiveis %></td>
+    <td><%= link_to 'Show', apresentacao %></td>
+    <td><%= link_to 'Edit', edit_apresentacao_path(apresentacao) %></td>
+    <td><%= link_to 'Destroy', apresentacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+<% end %>
+</tbody>
+</table>
+<%= link_to 'Criar nova apresentação', new_apresentacao_path %>
+
+
 <%= link_to 'Edit', edit_apresentacao_path(@apresentacao) %> |
 <%= link_to 'Back', apresentacaos_path %>
