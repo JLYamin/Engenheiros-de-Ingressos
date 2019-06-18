@@ -4,13 +4,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-      <%= f.input :name,
+    <%= f.input :name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "name" }%>
+    <%= f.input :cpf,
+                required: true,
+                label: "CPF",
+                input_html: { autocomplete: "cpf" }%>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
@@ -19,11 +22,20 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.fields_for :credit_card do |c_form| %>
+      <h5><%= c_form.label "Cartão de Crédito" %></h5>
+      <%= c_form.input :number %>
+      <%= c_form.input :security %>
+      <%= c_form.input :expiration, { :discard_day => true} %>
+    <% end %>
   </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+
+
 
 <%= render "devise/shared/links" %>
