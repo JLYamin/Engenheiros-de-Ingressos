@@ -7,7 +7,7 @@ class Evento < ApplicationRecord
     before_save :normalize_fields
 
     validates :title, presence: true, length:{in: 2..30}
-    validate :expiration_date_cannot_be_in_the_past
+    validate :dates_cannot_be_in_the_past
 
     private
     def normalize_fields
@@ -15,7 +15,7 @@ class Evento < ApplicationRecord
         #self.descricao = self.descricao.capitalize
     end
 
-    def expiration_date_cannot_be_in_the_past
+    def dates_cannot_be_in_the_past
         if (date_begin.present? && date_begin < Date.today)
         errors.add(:date_begin, "can't be in the past")
         end
