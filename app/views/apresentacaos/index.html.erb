@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @apresentacaos.each do |apresentacao| %>
+    <%  @apresentacaos.each do |apresentacao| %>
       <tr>
         <td><%= apresentacao.name %></td>
         <td><%= apresentacao.descricao %></td>
@@ -27,6 +27,7 @@
         <td><%= link_to 'Destroy', apresentacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 

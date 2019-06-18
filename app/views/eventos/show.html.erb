@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h1>
   <%= @evento.title %>
-</p>
-
+</h1>
+<br>
 <p>
   <strong>Date begin:</strong>
   <%= @evento.date_begin.strftime("%d/%B/%Y - %I:%M%p") %>
@@ -29,6 +28,39 @@
   <strong>Classe:</strong>
   <%= @evento.classes_evento.classe %>
 </p>
+
+<br>
+
+<h1>Apresentacoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Descricao</th>
+      <th>Horario</th>
+      <th>Ingressos total</th>
+      <th>Disponiveis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%  @evento.apresentacaos.each do |apresentacao| %>
+      <tr>
+        <td><%= apresentacao.name %></td>
+        <td><%= apresentacao.descricao %></td>
+        <td><%= apresentacao.horario %></td>
+        <td><%= apresentacao.ingressos_total %></td>
+        <td><%= apresentacao.disponiveis %></td>
+        <td><%= link_to 'Show', apresentacao %></td>
+        <td><%= link_to 'Edit', edit_apresentacao_path(apresentacao) %></td>
+        <td><%= link_to 'Destroy', apresentacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_evento_path(@evento) %> |
 <%= link_to 'Back', eventos_path %>

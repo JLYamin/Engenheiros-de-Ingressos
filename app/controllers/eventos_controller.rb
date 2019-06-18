@@ -11,7 +11,7 @@ class EventosController < ApplicationController
   # GET /eventos/1
   # GET /eventos/1.json
   def show
-
+    
   end
 
   def showMy
