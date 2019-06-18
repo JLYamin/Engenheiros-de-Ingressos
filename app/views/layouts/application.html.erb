@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ingressos</title>
+    <title>eventop eventos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,12 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.ico') %>
     <link href="https://fonts.googleapis.com/css?family=Quattrocento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
   </head>
 
   <body >
     <header> 
       <div class="logo">
-        <a href="/"><%= image_tag asset_path("logo.png", :alt => "ingressos logo") %> </a>
+        <a href="/">eventop eventos<%= image_tag asset_path("logo.png", :alt => "ingressos logo") %> </a>
       </div>
       <div class="opcoes">
       <% if user_signed_in? %>

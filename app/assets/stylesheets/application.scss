@@ -22,14 +22,13 @@
 }
 
 header{
-    padding: 20px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 0;
     background-color: antiquewhite;
     width: 100vw;
-    height: 7vh;
     padding-left: 20px;
     position: fixed;
     top:0;
@@ -51,11 +50,11 @@ a{
 
 a:link{
     background-color: transparent;
-    color: rosybrown;
+    color: rgb(129, 46, 46);
 }
 
 a:visited{
-    color: mediumvioletred;
+    color: rgb(129, 46, 46);
 }
 
 a:hover{
@@ -64,24 +63,26 @@ a:hover{
     background-color: transparent
 }
 
+.logo {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
 .logo > a >img{
-    height: 3vh;
+    height: 1.5rem;
     width: auto;
-    object-fit: contain;
-    object-position: left;
+    margin-left: 0.5rem;
 }
 
 body{
-
     font-family: 'Quattrocento', serif;
     background-color: white;
     padding: 0;
 }
 
 main{
-    min-height: 86vh;
-    padding: 16px;
-    margin-top:7vh;
+    min-height: 100vh;
+    padding: 6rem 4rem 0rem;
 }
 
 main > tbody{
