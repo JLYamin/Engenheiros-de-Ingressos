@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :salas
+  resources :locals
+  resources :ingressos
   get 'adm/index'
   resources :apresentacaos
   resources :classes_eventos

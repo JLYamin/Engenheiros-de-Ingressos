@@ -41,9 +41,19 @@ Estado.create(name: 'São Paulo', sigla: 'SP')
 Estado.create(name: 'Sergipe', sigla: 'SE')
 Estado.create(name: 'Tocantins', sigla: 'TO')
 
-User.create(name: 'Administrador', cpf: 000, email: 'adm@adm.com', password:'admadm', adm: 'true')
-User.create(name: 'Jorge', cpf: 123, email: 'oi@gmail.com', password:'123456')
-User.create(name: 'Pão', cpf: 222, email: 'pao@pao.com', password:'paopao')
+
+User.create(name: 'Administrador', email: 'adm@adm.com', password:'admadm', adm: 'true')
+User.create(name: 'Jorge', email: 'oi@gmail.com', password:'123456', cpf:Faker::CPF.cpf)
+User.create(name: 'Pão', email: 'pao@pao.com', password:'paopao', cpf: Faker::CPF.cpf)
+
+d1 = DateTime.new(2022,06,22)
+d2 = DateTime.new(2022,06,27)
+
+Evento.create(title: 'Oi sdds', date_begin: DateTime.new(2022,06,22) ,date_end: DateTime.new(2022,06,27), user_id: 1, descricao: 'oi sdds', faixa_etarium_id: 2, classes_evento_id: 1)
+Evento.create(title: 'Helo Goda', date_begin: DateTime.new(2022,05,03) ,date_end: DateTime.new(2022,10,01), user_id: 1, faixa_etarium_id: 5, classes_evento_id: 3)
+Evento.create(title: 'Helsing Goda', date_begin: DateTime.new(2022,05,03) ,date_end: DateTime.new(2022,10,01), user_id: 3, faixa_etarium_id: 5, classes_evento_id: 3)
+Evento.create( title: 'Show da Anitta', date_begin: DateTime.new(2020,2,3,4,5,6), date_end: DateTime.new(2020,3,1,1,5), user_id: 1, faixa_etarium_id: 1, classes_evento_id: 3)
+Evento.create( title: 'Campeonato Regional de LoL', date_begin: DateTime.new(2019,7,3,10,0), date_end: DateTime.new(2019,7,3,14,0), user_id: 1, faixa_etarium_id: 2, classes_evento_id: 2) 
 
 FaixaEtarium.create(faixa_etaria:'Livre', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
 FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 10 anos', description:'Conteúdo violento ou linguagem inapropriada para crianças, ainda que em menor intensidade')
@@ -51,6 +61,3 @@ FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 12 anos', des
 FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 14 anos', description:'Conteúdos mais violentos e/ ou de linguagem sexual mais acentuada')
 FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 16 anos', description:'Não expõe crianças a conteúdos potencialmente prejudiciais')
 FaixaEtarium.create(faixa_etaria:'Não recomendado para menores de 18 anos', description:'Conteúdos violentos e sexuais extremos. Cenas de sexo, incesto ou atos repetidos de tortura, mutilação ou abuso sexual.')
-
-Evento.create( title: 'Show da Anitta', date_begin: DateTime.new(2020,2,3,4,5,6), date_end: DateTime.new(2020,3,1,1,5), user_id: 1, faixa_etarium_id: 1, classes_evento_id: 3)
-Evento.create( title: 'Campeonato Regional de LoL', date_begin: DateTime.new(2019,7,3,10,0), date_end: DateTime.new(2019,7,3,14,0), user_id: 1, faixa_etarium_id: 2, classes_evento_id: 2) 

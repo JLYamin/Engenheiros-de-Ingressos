@@ -5,17 +5,40 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @estado.name %>
-</p>
+<h1>
+  <strong><%= @estado.name %></strong>
+</h1>
 
-<p>
-  <strong>Sigla:</strong>
-  <%= @estado.sigla %>
-</p>
+<p> Sigla: <%= @estado.sigla %> </p>
 
-<%= link_to 'Edit', edit_estado_path(@estado) %> |
+<h3>Cidades</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cidade nome</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estado.cidades.each do |cidade| %>
+      <tr>
+        <td><%= cidade.cidade_nome %></td>
+        <td><%= link_to 'Show', cidade %></td>
+        <td><%= link_to 'Edit', edit_cidade_path(cidade, estado: @estado) %></td>
+        <td><%= link_to 'Destroy', cidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Cidade', new_cidade_path(estado: @estado) %>
+|
+  <%= link_to 'Edit', edit_estado_path(@estado) %> |
 <%= link_to 'Back', estados_path %>
 <% else %>
   <p>Somente Adm</p>

@@ -1,11 +1,6 @@
 class CidadesController < ApplicationController
   before_action :set_cidade, only: [:show, :edit, :update, :destroy]
-
-  # GET /cidades
-  # GET /cidades.json
-  def index
-    @cidades = Cidade.order(:cidade_nome)
-  end
+  before_action :set_estado
 
   # GET /cidades/1
   # GET /cidades/1.json
@@ -25,7 +20,6 @@ class CidadesController < ApplicationController
   # POST /cidades.json
   def create
     @cidade = Cidade.new(cidade_params)
-
     respond_to do |format|
       if @cidade.save
         format.html { redirect_to @cidade, notice: 'Cidade was successfully created.' }
@@ -54,9 +48,10 @@ class CidadesController < ApplicationController
   # DELETE /cidades/1
   # DELETE /cidades/1.json
   def destroy
+    @p = @cidade.estado
     @cidade.destroy
     respond_to do |format|
-      format.html { redirect_to cidades_url, notice: 'Cidade was successfully destroyed.' }
+      format.html { redirect_to @p, notice: 'Cidade was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -65,6 +60,10 @@ class CidadesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cidade
       @cidade = Cidade.find(params[:id])
+    end
+
+    def set_estado
+      @estado = params[:estado]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
