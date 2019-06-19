@@ -58,7 +58,7 @@ a:visited{
 }
 
 a:hover{
-    color: navajowhite;
+    color: rgb(158, 52, 52);
     text-decoration: none;
     background-color: transparent
 }
@@ -110,7 +110,7 @@ footer{
 .opcoes{
     display: flex;
     flex-direction: row;
-
+    align-items: center;
 }
 
 .opcoes > a{

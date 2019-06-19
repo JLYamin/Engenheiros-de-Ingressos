@@ -2,16 +2,16 @@
 
 <h1>Eventos</h1>
 
-<table>
-  <thead>
+<table class="table table-stripped table-bordered table-hover">
+  <thead class="thead-dark">
     <tr>
-      <th>Title</th>
-      <th>Date begin</th>
-      <th>Date end</th>
-      <th>Criado por</th>
-      <th>Tipo de Evento</th>
-      <th>Faixa Etaria</th>
-      <th colspan="3"></th>
+      <th class="col" colspan="1">Evento</th>
+      <th class="col">Começa em</th>
+      <th class="col">Termina em</th>
+      <th class="col">Criado por</th>
+      <th class="col">Tipo de Evento</th>
+      <th class="col">Faixa Etaria</th>
+      <th class="col" colspan="3"></th>
     </tr>
   </thead>
 
@@ -19,8 +19,8 @@
     <% @eventos.each do |evento| %>
       <tr>
         <td><%= evento.title %></td>
-        <td><%= evento.date_begin.strftime("%d/%B/%Y - %I:%M%p")  %></td>
-        <td><%= evento.date_end.strftime("%d/%B/%Y at %I:%M%p") %></td>
+        <td><%= evento.date_begin.strftime("%d/%m/%Y - %H:%M")  %></td>
+        <td><%= evento.date_end.strftime("%d/%m/%Y - %H:%M") %></td>
         <td><%= evento.user.email %></td>
         <td><%= evento.classes_evento.classe %></td>
         <td><%= evento.faixa_etarium.faixa_etaria %></td>

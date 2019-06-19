@@ -20,10 +20,10 @@
       <div class="opcoes">
       <% if user_signed_in? %>
          <% if  (user_signed_in?)and(current_user.adm == true)%>
-          Logged in as : <strong> adm</strong>
+          Logado como:&nbsp; <strong>Administrador</strong> &ensp;
           <a href="/adm">Painel</a>
           <% else %>
-          Logged in as . <strong><%=    current_user.email %></strong>
+          Logado como:&nbsp; <strong><%= current_user.name.split[0] %></strong> &ensp;
           <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %>
         <% end %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>

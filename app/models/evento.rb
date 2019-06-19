@@ -5,7 +5,7 @@ class Evento < ApplicationRecord
     has_many :apresentacaos
 
     before_save :normalize_fields
-    validate :mesmo_evento_na_mesma_data
+    # validate :mesmo_evento_na_mesma_data
     validates :title, presence: true, length:{in: 2..30}
     validate :dates_cannot_be_in_the_past
 
